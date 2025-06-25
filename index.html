@@ -1,138 +1,169 @@
 <!doctype html>
 <html lang="nl">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Muqpo - Creatief Webbureau</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-      .hero {
-        background: #f8f9fa;
-        padding: 100px 0;
-        text-align: center;
-      }
-      .portfolio img {
-        max-width: 100%;
-        border-radius: 8px;
-      }
-      body {
-      background-color: #ffffff;
-      color: #333333;
-      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      scroll-behavior: smooth;
-      }
-      a {
-        color: #0070ba;
-      }
-      a:hover {
-        color: #005799;
-      }
-      .btn-primary {
-        background-color: #0070ba;
-        border: none;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 4px;
-        text-decoration: none;
-        display: inline-block;
-      }
-      .btn-primary:hover {
-        background-color: #005799;
-      }
-      header, footer {
-        background-color: #f2f2f2;
-        padding: 20px;
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Muqpo</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#wistjedat">Wist je dat...</a></li>
-            <li class="nav-item"><a class="nav-link" href="#weetje">Internetweetje</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MUQPO | Online aanwezigheid & advies voor ondernemers</title>
+  <meta name="description" content="MUQPO helpt ondernemers met advies voor hun unieke online plek. Geen ingewikkelde sites, wel slimme coaching en ondersteuning. Contacteer ons vandaag!" />
+  <meta name="keywords" content="online aanwezigheid, website advies, webcoaching, ondernemers, simpele zakelijke websites, MUQPO, online coaching" />
+  <meta name="author" content="MUQPO - KJR" />
+  <!-- Open Graph tags voor social media delen -->
+  <meta property="og:title" content="MUQPO | Online aanwezigheid & advies voor ondernemers" />
+  <meta property="og:description" content="Slimme coaching en advies voor jouw unieke online plek. Wij helpen ondernemers online te starten met duidelijke begeleiding." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://muqpo.be" />
+  <!--<meta property="og:image" content="https://muqpo.be/path-to-image.jpg" /> <!-- voeg een representatieve afbeelding toe -->
+  <!-- Twitter Card tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MUQPO | Online aanwezigheid & advies voor ondernemers" />
+  <meta name="twitter:description" content="Slimme coaching en advies voor jouw unieke online plek. Wij helpen ondernemers online te starten met duidelijke begeleiding." />
+  <!--<meta name="twitter:image" content="https://muqpo.be/path-to-image.jpg" /> <!-- zelfde afbeelding als og:image -->
+    
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --muqpo-primary: #2d3e68;
+      --muqpo-accent: #9cbee4;
+      --muqpo-light: #ffffff;
+      --muqpo-text: #e6ecf5;
+    }
 
-    <!-- Hero -->
-    <section class="hero" id="home">
-      <div class="container">
-        <h1 class="display-4">MUQPO</h1>
-        <p class="lead">
-          We bieden niet meer actief onze webpakketten aan.<br>
-          We helpen wél nog ondernemers met advies, kleine aanpassingen of gewoon wat duidelijkheid in het online doolhof.<br>
-          Ben je al klant? Dan weet je ons sowieso te vinden in de cloud.<br>
-          Nieuw gezicht? Stuur gerust een mail, als het klikt, dan praten we verder.<br><br>
-          Binnenkort gooien we hier ook wat tips online.<br>
-          Geen verkooppraatjes, gewoon heldere inzichten over online zichtbaarheid.<br>
-          Koffie is optioneel</p>
-        <a href="#contact" class="btn btn-primary btn-lg mt-3">Start je project</a>
-      </div>
-    </section>
+    body {
+      background-color: var(--muqpo-primary);
+      color: var(--muqpo-text);
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      overflow-x: hidden;
+    }
 
-    <!-- Wist je dat -->
-    <section id="wistjedat" class="py-5">
-      <div class="container">
-        <h2>Wist je dat...</h2>
-        <p>MUQPO eigenlijk staat voor My UniQue Place Online?</p>
-        <p>Want elke ondernemer verdient z'n plek online.</p>
-        <p>Niet de grootste, wel de juiste.</p>
-      </div>
-    </section>
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
 
-    <!-- Internetweetje -->
-    <section id="weetje" class="py-5 bg-light">
-      <div class="container">
-        <h2>Internetweetje</h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <p>De allereerste website ooit is nog steeds online — sinds 1991!</p>
-            <p>Toch denken we dat jouw plek online veel meer sprankelt dan die oer-website 😉</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    h1 {
+      color: var(--muqpo-accent);
+    }
 
-    <!-- Contact -->
-    <section id="contact" class="py-5">
-      <div class="container">
-        <h2>Contacteer ons</h2>
-        <p>hallo@muqpo.be</p>
-        <form>
-          <div class="mb-3">
-            <label for="naam" class="form-label">Naam</label>
-            <input type="text" class="form-control" id="naam" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">E-mailadres</label>
-            <input type="email" class="form-control" id="email" required>
-          </div>
-          <div class="mb-3">
-            <label for="bericht" class="form-label">Bericht</label>
-            <textarea class="form-control" id="bericht" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Verzenden</button>
-        </form>
-      </div>
-    </section>
+    footer {
+      background-color: var(--muqpo-light);
+      padding: 2rem 1rem 1rem;
+      color: var(--muqpo-primary);
+    }
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-      <div class="container">
-        &copy; 2025 Muqpo.be – Alle rechten voorbehouden.
-      </div>
-    </footer>
+    .footer-zone {
+      padding: 1rem 0;
+      border-top: 1px solid #d0d0d0;
+      opacity: 0;
+      transform: translateY(20px);
+    }
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+    .footer-zone:nth-child(1) {
+      animation: slideUp 0.8s ease-out 0.5s forwards;
+    }
+
+    .footer-zone:nth-child(2) {
+      animation: slideUp 0.8s ease-out 1s forwards;
+    }
+
+    .footer-zone:nth-child(3) {
+      animation: slideUp 0.8s ease-out 1.5s forwards;
+    }
+
+    .footer-zone:nth-child(4) {
+      animation: slideUp 0.8s ease-out 2s forwards;
+    }
+
+    .footer-copy {
+      font-size: 0.875rem;
+      color: #666;
+    }
+
+    a.contact-link {
+      color: var(--muqpo-primary);
+      text-decoration: underline;
+    }
+
+    a.contact-link:hover {
+      color: var(--muqpo-accent);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+	.white-text {
+		color: white;
+	}
+	.accent-text {
+		color: #9cbee4; /* lichtblauw van MUQPO */
+	}
+  </style>
+</head>
+<body>
+
+  <main>
+    <div class="container">
+      <h1 class="mb-4">
+		<span class="white-text">Welkom bij</span> <span class="accent-text">MUQPO</span><span class="white-text">.be</span>
+	  </h1>
+      <p>Wil je onze kijk horen op jouw online aanwezigheid?<br />
+        We bouwen niet alles meer zelf,<br />
+        maar advies geven we nog altijd met plezier.</p>
+	  <p>Tips... Die kan je hier binnenkort vinden...</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container text-center">
+      <div class="footer-zone">
+        <strong>Wist je dat...</strong><br />
+		MUQPO eigenlijk staat voor My UniQue Place Online?<br />
+		Want elke ondernemer verdient z'n plek online.<br />
+		Niet de grootste, wel de juiste.
+      </div>
+      <div class="footer-zone">
+        <strong>Internetweetje:</strong><br />
+		De allereerste website ooit is nog steeds online — sinds 1991!<br />
+		Toch denken we dat jouw plek online veel meer sprankelt dan die oer-website 😉
+      </div>
+      <div class="footer-zone">
+        <strong>Contact</strong><br />
+        Mail ons <a href="mailto:hallo@muqpo.be" class="contact-link">hallo@muqpo.be</a>
+      </div>
+      <div class="footer-zone footer-copy">
+        &copy; 2025 MUQPO.be – KJR – Alle rechten voorbehouden.<br />
+		MUQPO.be is een onderdeel van MUQID Company bv (BE0649.648.788).
+      </div>
+    </div>
+  </footer>
+<!-- Website as a service by MUQPO.be -->
+<!-- Copyright 2025 MUQPO.be - KJR -->
+<!-- Author: KJR - KristofRaes.be -->
+</body>
 </html>
