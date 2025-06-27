@@ -152,8 +152,9 @@
       </div>
       <div class="footer-zone">
         <strong>Internetweetje:</strong><br />
-		De allereerste website ooit is nog steeds online — sinds 1991!<br />
-		Toch denken we dat jouw plek online veel meer sprankelt dan die oer-website 😉
+	      <p id="weetje">Laden...</p>
+  	      <button onclick="toonVolgendWeetje()">Toon volgend internetweetje...</button>
+		<!-- De allereerste website ooit is nog steeds online — sinds 1991! Toch denken we dat jouw plek online veel meer sprankelt dan die oer-website 😉 -->
       </div>
       <div class="footer-zone">
         <strong>Contact</strong><br />
@@ -165,6 +166,39 @@
       </div>
     </div>
   </footer>
+  <script>
+    let weetjes = [];
+    let index = 0;
+
+    // Laad de JSON met weetjes
+    fetch('data/internetweetjes.json')
+      .then(response => response.json())
+      .then(data => {
+        weetjes = data;
+        toonWeetje(); // toon eerste weetje
+      })
+      .catch(error => {
+        document.getElementById('weetje').textContent = 'Kon geen weetjes laden.';
+        console.error('Fout bij laden JSON:', error);
+      });
+    function toonWeetje() {
+      if (weetjes.length > 0) {
+        document.getElementById('weetje').textContent = weetjes[index];
+      }
+    }
+    function toonVolgendWeetje() {
+      if (weetjes.length > 0) {
+        index = (index + 1) % weetjes.length;
+        toonWeetje();
+      }
+    }
+    function toonWillekeurigWeetje() {
+  	if (weetjes.length > 0) {
+    	const randomIndex = Math.floor(Math.random() * weetjes.length);
+    	document.getElementById('weetje').textContent = weetjes[randomIndex];
+  	}
+    }	
+  </script>
 <!-- Website as a service by MUQPO.be -->
 <!-- Copyright 2025 MUQPO.be - KJR -->
 <!-- Author: KJR - KristofRaes.be -->
