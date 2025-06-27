@@ -146,14 +146,14 @@
     <div class="container text-center">
       <div class="footer-zone">
         <strong>Wist je dat...</strong><br />
-		MUQPO eigenlijk staat voor My UniQue Place Online?<br />
+		MUQPO eigenlijk staat voor <b>M</b>y <b>U</b>ni<b>Q</b>ue <b>P</b>lace <b>O</b>nline?<br />
 		Want elke ondernemer verdient z'n plek online.<br />
 		Niet de grootste, wel de juiste.
       </div>
       <div class="footer-zone">
         <strong>Internetweetje:</strong><br />
-	      <p id="weetje">Laden...</p>
-  	      <button onclick="toonVolgendWeetje()">Toon volgend internetweetje...</button>
+	      <p id="note">Laden...</p>
+  	      <button onclick="showNextNote()">Toon volgend internetweetje...</button>
 		<!-- De allereerste website ooit is nog steeds online — sinds 1991! Toch denken we dat jouw plek online veel meer sprankelt dan die oer-website 😉 -->
       </div>
       <div class="footer-zone">
@@ -167,7 +167,7 @@
     </div>
   </footer>
   <script>
-    let weetjes = [];
+    let notes = [];
     let index = 0;
 
     // Laad de JSON met weetjes
@@ -175,27 +175,27 @@
       .then(response => response.json())
       .then(data => {
         weetjes = data;
-        toonWeetje(); // toon eerste weetje
+        showNote();
       })
       .catch(error => {
-        document.getElementById('weetje').textContent = 'Kon geen weetjes laden.';
+        document.getElementById('note').textContent = 'Kon geen weetjes laden.';
         console.error('Fout bij laden JSON:', error);
       });
-    function toonWeetje() {
+    function showNote() {
       if (weetjes.length > 0) {
-        document.getElementById('weetje').textContent = weetjes[index];
+        document.getElementById('note').textContent = notes[index];
       }
     }
-    function toonVolgendWeetje() {
-      if (weetjes.length > 0) {
-        index = (index + 1) % weetjes.length;
-        toonWeetje();
+    function showNextNote() {
+      if (notes.length > 0) {
+        index = (index + 1) % notes.length;
+        showNote();
       }
     }
-    function toonWillekeurigWeetje() {
-  	if (weetjes.length > 0) {
-    	const randomIndex = Math.floor(Math.random() * weetjes.length);
-    	document.getElementById('weetje').textContent = weetjes[randomIndex];
+    function showRandomNote() {
+  	if (notes.length > 0) {
+    	const randomIndex = Math.floor(Math.random() * notes.length);
+    	document.getElementById('note').textContent = notes[randomIndex];
   	}
     }	
   </script>
