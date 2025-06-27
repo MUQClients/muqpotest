@@ -174,7 +174,7 @@
     fetch('data/internetweetjes.json')
       .then(response => response.json())
       .then(data => {
-        weetjes = data;
+        notes = data;
         showNote();
       })
       .catch(error => {
