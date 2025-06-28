@@ -127,6 +127,35 @@
 	.accent-text {
 		color: #9cbee4; /* lichtblauw van MUQPO */
 	}
+
+    .cookie-popup {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #f4f4f4;
+      padding: 20px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      display: none;
+      z-index: 1000;
+    }
+
+    .cookie-popup p {
+      margin: 0 0 10px;
+    }
+
+    .cookie-popup button {
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .cookie-popup button:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
@@ -145,7 +174,11 @@
 	  <p>Tips... Die kan je hier binnenkort vinden...</p>
     </div>
   </main>
-
+  <!-- Cookie popup -->
+  <div class="cookie-popup" id="cookiePopup">
+    <p>We gebruiken cookies om uw ervaring te verbeteren. Door verder te gaan, accepteert u ons gebruik van cookies.</p>
+    <button onclick="acceptCookies()">Accepteer cookies</button>
+  </div>
   <footer>
     <div class="container text-center">
       <div class="footer-zone">
@@ -202,7 +235,15 @@
     	const randomIndex = Math.floor(Math.random() * notes.length);
     	document.getElementById('note').textContent = notes[randomIndex];
   	}
-    }	
+    }
+    // Controleer of toestemming al is gegeven
+    if (!localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookiePopup').style.display = 'block';
+    }
+    function acceptCookies() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      document.getElementById('cookiePopup').style.display = 'none';
+    }
   </script>
 <!-- Website as a service by MUQPO.be -->
 <!-- Copyright 2025 MUQPO.be - KJR -->
